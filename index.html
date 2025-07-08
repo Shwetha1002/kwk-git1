@@ -2,78 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About Me!</title>
+  <title>About Me</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f0f0;
-      color: #333;
-      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 50px;
-      transition: background-color 0.5s, color 0.5s;
+      padding: 0;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
     }
 
-    h1 {
-      font-size: 3em;
-      animation: pop 0.6s ease-in-out;
+    header {
+      background-color: #3f51b5;
+      color: white;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
     }
 
-    p {
-      font-size: 1.2em;
-      margin-top: 20px;
-      transition: color 0.3s;
-    }
-
-    p:hover {
-      color: #0077cc;
+    .container {
+      padding: 20px;
+      max-width: 600px;
+      text-align: center;
     }
 
     button {
-      margin-top: 30px;
+      margin-top: 20px;
       padding: 10px 20px;
       font-size: 1em;
-      background-color: #0077cc;
+      background-color: #3f51b5;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s;
     }
 
     button:hover {
-      background-color: #005fa3;
+      background-color: #303f9f;
     }
 
-    @keyframes pop {
-      0% { transform: scale(0.8); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    .dark-mode {
-      background-color: #1a1a1a;
-      color: #f5f5f5;
+    #funFact {
+      margin-top: 20px;
+      font-style: italic;
+      color: #444;
     }
   </style>
 </head>
 <body>
 
-  <h1 id="main-heading">About Me!!</h1>
-  <p id="description">My first paragraph.</p>
+  <header>About Me</header>
 
-  <button onclick="toggleMode()">Toggle Dark Mode</button>
+  <div class="container">
+    <p>Hello! I'm Shwetha, a student who loves tech, dance, and trying new things! 👩‍💻✨</p>
+    <p>I enjoy coding, hanging out with friends, and exploring creative projects.</p>
+
+    <button onclick="showFunFact()">Click for a Fun Fact!</button>
+    <p id="funFact"></p>
+  </div>
 
   <script>
-    // Animation effect on heading after 1 second
-    setTimeout(() => {
-      document.getElementById("main-heading").textContent = "Welcome to My Page!!";
-    }, 1000);
+    const facts = [
+      "I can play the violin! 🎻",
+      "I once built a robot that follows lines!",
+      "My favorite movie is *Jab We Met*! 🎬",
+      "I'm part of a business fraternity and a sorority!",
+      "I love Oikos yogurt... like a lot. 🍓"
+    ];
 
-    // Dark mode toggle function
-    function toggleMode() {
-      document.body.classList.toggle("dark-mode");
+    function showFunFact() {
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      document.getElementById('funFact').textContent = facts[randomIndex];
     }
   </script>
 
 </body>
-</html
+</html>
