@@ -19,16 +19,27 @@
     header {
       background-color: #3f51b5;
       color: white;
-      width: 100%;
+      width: 50%;
       padding: 20px;
       text-align: center;
       font-size: 2em;
+      padding: 25px;
+      font-family: 'Poppins', sans-serif;
     }
 
     .container {
       padding: 20px;
       max-width: 600px;
       text-align: center;
+    }
+    .my_pic {
+      width: 300px;
+      height: auto;
+      transition: transform 0.3s ease; 
+    } 
+
+    .my_pic:hover {
+      transform: scale(1.1); 
     }
 
     
@@ -37,7 +48,7 @@
 <body>
 
   <header>About Me</header>
-  <img src="pic_of_me.jpg" alt="Shwetha">
+  <img src="pic_of_me.jpg" alt="Shwetha" style="width: 300px; height: auto;" class="my_pic">
   <div class="container">
     <p>Hey! My name is Shwetha and I'm a rising sophomore at Syracuse University.
         I love solving math problems and building anything related to tech!!
